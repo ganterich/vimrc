@@ -29,7 +29,7 @@ set scrolloff=5
 set termguicolors
 set nocursorline
 
-set t_md="" t_ut="" guioptions="" belloff=all mouse=a
+set t_md= t_ut= guioptions= belloff=all mouse=a
 
 set guicursor=n-v-c-i:block-Cursor
 set guicursor+=i:iCursor
