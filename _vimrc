@@ -5,8 +5,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'roepel/vimcolors'
-Plugin 'roepel/cpp.vim'
+Plugin 'ganterich/vimcolors'
+Plugin 'ganterich/cpp.vim'
 call vundle#end()
 filetype plugin indent on
 
@@ -36,13 +36,15 @@ set guicursor+=i:iCursor
 set guicursor+=n-v-c-i:blinkon0
 
 set background=dark
-colorscheme roepel
+colorscheme ganterich
 
+set guifont=Liberation\ Mono:h14
 if has('win32')
-	set guifont=Consolas:h14
+	"set guifont=Consolas:h14
+	"set guifont=Liberation\ Mono
 	let &makeprg="cd build && cmake --build ."
 elseif has('linux')
-	set guifont=Liberation\ Mono:h14
+	"set guifont=Liberation\ Mono:h14
 	let &makeprg="cd build && make -j4"
     runtime ftplugin/man.vim
     let g:ft_man_open_mode = 'vert'
@@ -58,6 +60,7 @@ nmap <leader>e :e<CR>
 nmap <leader>q :q<CR>
 nmap <leader>s :sp<CR>
 nmap <leader>v :vsp<CR>
+"nmap <leader>s :w<CR>:so %<CR>
 nmap <leader>z za
 nmap <leader>o :copen<CR>
 nmap <leader>m :make<CR>
@@ -125,6 +128,6 @@ let g:ctrlp_switch_buffer=0
 autocmd BufNewFile, BufRead *.bas set ft=vbnet
 autocmd FileType typescript set shiftwidth=2 | set tabstop=2 | set expandtab
 
-hi! link TODO Comment
+"hi! link TODO Comment
 hi! link Error Normal
 
