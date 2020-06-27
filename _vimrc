@@ -1,14 +1,14 @@
 set nocompatible
-"filetype off
-"set rtp+=~/.vim/bundle/Vundle.vim
-"call vundle#begin()
-"Plugin 'VundleVim/Vundle.vim'
-"Plugin 'ctrlpvim/ctrlp.vim'
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 "Plugin 'scrooloose/nerdtree'
 "Plugin 'ganterich/vimcolors'
-"Plugin 'ganterich/cpp.vim'
-"call vundle#end()
-"filetype plugin indent on
+Plugin 'ganterich/cpp.vim'
+call vundle#end()
+filetype plugin indent on
 
 syntax on
 set incsearch
@@ -108,8 +108,8 @@ xnoremap p pgvy
 "tnoremap <Esc> <C-\><C-n>
 
 
-"nmap <leader>+ :NERDTreeToggle<CR>
-"nmap <leader>- :NERDTreeFocus<CR>
+nmap <leader>+ :NERDTreeToggle<CR>
+nmap <leader>- :NERDTreeFocus<CR>
 
 "nmap <leader>p :CtrlPMRUFiles<CR>
 "nmap <leader>b :CtrlPBuffer<CR>
@@ -159,7 +159,12 @@ hi! Function guifg=#d06749
 hi! Todo guibg=NONE guifg=#ff4444
 
 "Furniture
-hi VertSplit    cterm=NONE ctermbg=235 ctermfg=0 guibg=#acb0a9 guifg=#2e3436
+"hi VertSplit    cterm=NONE ctermbg=235 ctermfg=0 guibg=#acb0a9 guifg=#2e3436
+hi VertSplit  gui=NONE guifg=#202020 guibg=#202020
+"hi! link StatusLine Normal
+"hi! link StatusLineNC Normal
+hi! StatusLine gui=NONE guifg=#d1c4c4 guibg=#202020
+hi! StatusLineNC gui=NONE guifg=#d0c0c0 guibg=#202020
 hi Visual       cterm=NONE ctermbg=238 guibg=#222222
 
 hi link SpecialKey Ignore
