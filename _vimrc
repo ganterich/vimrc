@@ -134,7 +134,6 @@ autocmd FileType typescript set shiftwidth=2 | set tabstop=2 | set expandtab
 """""""""""""""""
 "     COLORS
 """""""""""""""""
-
 set background=dark
 hi clear
 if exists("syntax_on")
@@ -158,31 +157,26 @@ hi! Underlined  gui=NONE gui=underline
 
 hi! Function guifg=#d06749
 
-
 hi! Todo guibg=NONE guifg=#bb4444
 hi! Note guibg=NONE guifg=#bb8888
+
 hi! link Error Normal
 
 "Furniture
 hi! VertSplit    gui=NONE guifg=#202020 guibg=#202020
 hi! StatusLine   gui=NONE guifg=#d1c4c4 guibg=#202020
 hi! StatusLineNC gui=NONE guifg=#d0c0c0 guibg=#202020
-hi Visual        guibg=#222222
+hi! Visual        guibg=#222222
 
 "hi link SpecialKey Ignore
 
 " Search
-hi IncSearch  ctermfg=214
-hi Search      ctermfg=NONE
+hi! IncSearch  ctermfg=214
+hi! Search      ctermfg=NONE
 
 "hi MatchParen  
 
 hi! Cursor  guifg=white guibg=#ff5500
 hi! iCursor guifg=white guibg=#0088ff
-
-
-syn keyword cNote contained NOTE
-syn cluster cCommentGroup contains=cTodo,cNote,cBadContinuation
-hi def link cNote Note
 
 
