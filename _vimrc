@@ -171,8 +171,8 @@ hi! Visual        guibg=#222222
 "hi link SpecialKey Ignore
 
 " Search
-hi! IncSearch  ctermfg=214
-hi! Search      ctermfg=NONE
+hi! IncSearch guifg=#40cc30 guibg=NONE gui=underline,bold
+hi! link Search Incsearch
 
 "hi MatchParen  
 
