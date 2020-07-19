@@ -1,3 +1,4 @@
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -86,14 +87,10 @@ inoremap <C-d> <Esc>lDa
 
 nmap Y y$
 
-nmap <BS> {
-vmap <BS> {
-nmap <S-h> {
-vmap <S-h> {
-nmap <CR> }
-vmap <CR> }
-nmap <S-l> }
-vmap <S-l> }
+omap <BS> {
+omap <S-h> {
+omap <CR> }
+omap <S-l> }
 
 " Window movement
 map <C-h> <C-w>h
