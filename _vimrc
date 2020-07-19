@@ -119,11 +119,6 @@ map <C-l> <C-w>l
 xnoremap p pgvy
 "tnoremap <Esc> <C-\><C-n>
 
-template<typename T>
-void SomeFunction(f32 value) {
-    string s =   "sjfkjsdfkjskdf"; "sjdfk" sjfks dfkskf;
-}
-
 nmap <leader>+ :NERDTreeToggle<CR>
 nmap <leader>- :NERDTreeFocus<CR>
 
