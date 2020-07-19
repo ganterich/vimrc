@@ -36,6 +36,8 @@ set guicursor=n-v-c-i:block-Cursor
 set guicursor+=i:iCursor
 set guicursor+=n-v-c-i:blinkon0
 
+set mps+=<:>
+
 set background=dark
 "colorscheme ganterich
 
@@ -87,10 +89,26 @@ inoremap <C-d> <Esc>lDa
 
 nmap Y y$
 
-omap <BS> {
 omap <S-h> {
-omap <CR> }
+map <S-h> {
 omap <S-l> }
+map <S-l> }
+
+" Inside next
+omap in( :<C-u>normal! f(vi(<CR>
+omap in{ :<C-u>normal! f{vi{<CR>
+omap in[ :<C-u>normal! f[vi[<CR>
+omap in< :<C-u>normal! f<vi<<CR>
+omap in' :<C-u>normal! f'vi'<CR>
+omap in" :<C-u>normal! f"vi"<CR>
+
+" Inside last
+omap il( :<C-u>normal! F)vi(<CR>
+omap il{ :<C-u>normal! F}vi{<CR>
+omap il[ :<C-u>normal! F]vi[<CR>
+omap il< :<C-u>normal! F>vi<<CR>
+omap il' :<C-u>normal! F'vi'<CR>
+omap il" :<C-u>normal! F"vi"<CR>
 
 " Window movement
 map <C-h> <C-w>h
@@ -101,6 +119,10 @@ map <C-l> <C-w>l
 xnoremap p pgvy
 "tnoremap <Esc> <C-\><C-n>
 
+template<typename T>
+void SomeFunction(f32 value) {
+    string s =   "sjfkjsdfkjskdf"; "sjdfk" sjfks dfkskf;
+}
 
 nmap <leader>+ :NERDTreeToggle<CR>
 nmap <leader>- :NERDTreeFocus<CR>
