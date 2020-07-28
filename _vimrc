@@ -123,7 +123,13 @@ let g:ctrlp_switch_buffer=0
 
 
 
-autocmd BufNewFile, BufRead *.bas set ft=vbnet
+autocmd BufNewFile, BufRead *.bas  set ft=vbnet
+autocmd BufNewFile, BufRead *.fs   set ft=cpp
+autocmd BufNewFile, BufRead *.vs   set ft=cpp
+autocmd BufNewFile, BufRead *.vs   set ft=cpp
+autocmd BufNewFile, BufRead *.frag set ft=cpp
+autocmd BufNewFile, BufRead *.vert set ft=cpp
+autocmd BufNewFile, BufRead *.glsl set ft=cpp
 autocmd FileType typescript set shiftwidth=2 | set tabstop=2 | set expandtab
 
 
