@@ -1,3 +1,4 @@
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -34,6 +35,8 @@ set t_md= t_ut= guioptions= belloff=all mouse=a
 set guicursor=n-v-c-i:block-Cursor
 set guicursor+=i:iCursor
 set guicursor+=n-v-c-i:blinkon0
+
+set mps+=<:>
 
 set background=dark
 "colorscheme ganterich
@@ -86,14 +89,26 @@ inoremap <C-d> <Esc>lDa
 
 nmap Y y$
 
-nmap <BS> {
-vmap <BS> {
-nmap <S-h> {
-vmap <S-h> {
-nmap <CR> }
-vmap <CR> }
-nmap <S-l> }
-vmap <S-l> }
+omap <S-h> {
+map <S-h> {
+omap <S-l> }
+map <S-l> }
+
+" Inside next
+omap in( :<C-u>normal! f(vi(<CR>
+omap in{ :<C-u>normal! f{vi{<CR>
+omap in[ :<C-u>normal! f[vi[<CR>
+omap in< :<C-u>normal! f<vi<<CR>
+omap in' :<C-u>normal! f'vi'<CR>
+omap in" :<C-u>normal! f"vi"<CR>
+
+" Inside last
+omap il( :<C-u>normal! F)vi(<CR>
+omap il{ :<C-u>normal! F}vi{<CR>
+omap il[ :<C-u>normal! F]vi[<CR>
+omap il< :<C-u>normal! F>vi<<CR>
+omap il' :<C-u>normal! F'vi'<CR>
+omap il" :<C-u>normal! F"vi"<CR>
 
 " Window movement
 map <C-h> <C-w>h
@@ -103,7 +118,6 @@ map <C-l> <C-w>l
 
 xnoremap p pgvy
 "tnoremap <Esc> <C-\><C-n>
-
 
 nmap <leader>+ :NERDTreeToggle<CR>
 nmap <leader>- :NERDTreeFocus<CR>
