@@ -7,14 +7,18 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 "Plugin 'ganterich/vimcolors'
+Plugin 'morhetz/gruvbox'
+Plugin 'AlessandroYorba/Alduin'
 Plugin 'ganterich/cpp.vim'
+Plugin 'OmniSharp/omnisharp-vim'
+Plugin 'dense-analysis/ale'
 call vundle#end()
 filetype plugin indent on
 
 syntax on
 set incsearch
 
-set wrap
+set nowrap
 set tabstop=4 shiftwidth=4 expandtab smarttab
 set linebreak
 set hlsearch ignorecase
@@ -38,10 +42,9 @@ set guicursor+=n-v-c-i:blinkon0
 
 set mps+=<:>
 
-set background=dark
 "colorscheme ganterich
 
-set guifont=Liberation\ Mono:h14
+set guifont=Consolas
 if has("win32")
 	"set guifont=Consolas:h14
 	let &makeprg="cd build && cmake --build ."
@@ -62,7 +65,7 @@ nmap <leader>q :q<CR>
 nmap <leader>s :sp<CR>
 nmap <leader>v :vsp<CR>
 nmap <leader>z za
-nmap <leader>o :copen<CR>
+"nmap <leader>o :copen<CR>
 nmap <leader>m :make<CR>
 nmap <leader>n :cn<CR>
 nmap <leader>p :cN<CR>
@@ -133,6 +136,69 @@ let g:ctrlp_show_hidden=1
 let g:ctrlp_switch_buffer=0
 
 
+" ALE: {{{
+let g:ale_sign_error = '•'
+let g:ale_sign_warning = '•'
+let g:ale_sign_info = '·'
+let g:ale_sign_style_error = '·'
+let g:ale_sign_style_warning = '·'
+
+let g:ale_linters = { 'cs': ['OmniSharp'] }
+let g:ale_completion_enabled = 1
+" }}}
+
+" OmniSharp: {{{
+set omnifunc=ale#completion#OmniFunc
+augroup omnisharp_commands
+  autocmd!
+
+  " Show type information automatically when the cursor stops moving.
+  " Note that the type is echoed to the Vim command line, and will overwrite
+  " any other messages in this space including e.g. ALE linting messages.
+  autocmd CursorHold *.cs OmniSharpTypeLookup
+
+  " The following commands are contextual, based on the cursor position.
+  autocmd FileType cs nmap <silent> <buffer> gd <Plug>(omnisharp_go_to_definition)
+  autocmd FileType cs nmap <silent> <buffer> <F12> <Plug>(omnisharp_go_to_definition)
+  autocmd FileType cs nmap <silent> <buffer> <Leader>osfu <Plug>(omnisharp_find_usages)
+  autocmd FileType cs nmap <silent> <buffer> <S-F12> <Plug>(omnisharp_find_usages)
+  autocmd FileType cs nmap <silent> <buffer> <Leader>osfi <Plug>(omnisharp_find_implementations)
+  autocmd FileType cs nmap <silent> <buffer> <Leader>ospd <Plug>(omnisharp_preview_definition)
+  autocmd FileType cs nmap <silent> <buffer> <Leader>ospi <Plug>(omnisharp_preview_implementations)
+  autocmd FileType cs nmap <silent> <buffer> <Leader>ost <Plug>(omnisharp_type_lookup)
+  autocmd FileType cs nmap <silent> <buffer> <Leader>osd <Plug>(omnisharp_documentation)
+  autocmd FileType cs nmap <silent> <buffer> <Leader>osfs <Plug>(omnisharp_find_symbol)
+  autocmd FileType cs nmap <silent> <buffer> <C-T> <Plug>(omnisharp_find_symbol)
+  autocmd FileType cs nmap <silent> <buffer> <Leader>osfx <Plug>(omnisharp_fix_usings)
+  autocmd FileType cs nmap <silent> <buffer> <C-\> <Plug>(omnisharp_signature_help)
+  autocmd FileType cs imap <silent> <buffer> <C-\> <Plug>(omnisharp_signature_help)
+
+  " Navigate up and down by method/property/field
+  autocmd FileType cs nmap <silent> <buffer> [[ <Plug>(omnisharp_navigate_up)
+  autocmd FileType cs nmap <silent> <buffer> ]] <Plug>(omnisharp_navigate_down)
+  " Find all code errors/warnings for the current solution and populate the quickfix window
+  autocmd FileType cs nmap <silent> <buffer> <Leader>osgcc <Plug>(omnisharp_global_code_check)
+  " Contextual code actions (uses fzf, vim-clap, CtrlP or unite.vim selector when available)
+  autocmd FileType cs nmap <silent> <buffer> <Leader>osca <Plug>(omnisharp_code_actions)
+  autocmd FileType cs xmap <silent> <buffer> <Leader>osca <Plug>(omnisharp_code_actions)
+  " Repeat the last code action performed (does not use a selector)
+  autocmd FileType cs nmap <silent> <buffer> <Leader>os. <Plug>(omnisharp_code_action_repeat)
+  autocmd FileType cs xmap <silent> <buffer> <Leader>os. <Plug>(omnisharp_code_action_repeat)
+
+  autocmd FileType cs nmap <silent> <buffer> <Leader>os= <Plug>(omnisharp_code_format)
+
+  autocmd FileType cs nmap <silent> <buffer> <Leader>osnm <Plug>(omnisharp_rename)
+
+  autocmd FileType cs nmap <silent> <buffer> <Leader>osre <Plug>(omnisharp_restart_server)
+  autocmd FileType cs nmap <silent> <buffer> <Leader>osst <Plug>(omnisharp_start_server)
+  autocmd FileType cs nmap <silent> <buffer> <Leader>ossp <Plug>(omnisharp_stop_server)
+augroup END
+" }}}
+
+" deoplete: {{{
+" Use deoplete.
+let g:deoplete#enable_at_startup = 1
+" }}}
 
 
 
@@ -200,3 +266,9 @@ hi! Cursor  guifg=white guibg=#ff5500
 hi! iCursor guifg=white guibg=#0088ff
 
 
+set background=dark
+let g:gruvbox_bold = 0
+let g:gruvbox_contrast_dark="hard"
+"colorscheme gruvbox
+
+colorscheme murphy
