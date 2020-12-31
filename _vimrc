@@ -148,6 +148,10 @@ let g:ale_completion_enabled = 1
 " }}}
 
 " OmniSharp: {{{
+"let g:OmniSharp_highlighting=0
+"let g:OmniSharp_highlight_groups = {
+    "\ 'ClassName': 'Normal'
+    "\}
 set omnifunc=ale#completion#OmniFunc
 augroup omnisharp_commands
   autocmd!
@@ -230,7 +234,7 @@ endif
 hi! Normal       gui=NONE guifg=#ccccbc guibg=#1a1919
 hi! Statement    gui=NONE guifg=#cab975
 hi! link Type Statement
-hi! link Identifier Constant
+hi! link Identifier Normal
 hi! Constant    gui=NONE guifg=#729a59
 hi! String      gui=NONE guifg=#496f6f
 hi! Comment     gui=NONE guifg=#775555
@@ -266,9 +270,7 @@ hi! Cursor  guifg=white guibg=#ff5500
 hi! iCursor guifg=white guibg=#0088ff
 
 
-set background=dark
-let g:gruvbox_bold = 0
-let g:gruvbox_contrast_dark="hard"
+"set background=dark
+"let g:gruvbox_bold = 0
+"let g:gruvbox_contrast_dark="hard"
 "colorscheme gruvbox
-
-colorscheme murphy
