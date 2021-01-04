@@ -44,7 +44,7 @@ set mps+=<:>
 
 "colorscheme ganterich
 
-set guifont=Consolas
+set guifont=Consolas:h14
 if has("win32")
 	"set guifont=Consolas:h14
 	let &makeprg="cd build && cmake --build ."
@@ -128,8 +128,8 @@ nmap <leader>- :NERDTreeFocus<CR>
 let g:ctrlp_by_filename=1
 let g:ctrlp_working_path_mode=0
 let g:ctrlp_custom_ignore={
-    \ 'dir': '\v[\/](\.git|\.hg|\.svn|node_modules)$',
-    \ 'file': '\v\.(exe|obj|pdb|ipch)',
+    \ 'dir': '\v[\/](\.git|\.hg|\.svn|node_modules|obj|bin)$',
+    \ 'file': '\v\.(exe|obj|pdb|ipch|swp)',
     \ 'link': ''
     \ }
 let g:ctrlp_show_hidden=1
@@ -149,6 +149,11 @@ let g:ale_completion_enabled = 1
 
 " OmniSharp: {{{
 set omnifunc=ale#completion#OmniFunc
+let g:OmniSharp_popup_options = {
+    \ 'highlight': 'Normal',
+    \ 'padding': [1],
+    \ 'border': [1]
+    \}
 augroup omnisharp_commands
   autocmd!
 
@@ -172,6 +177,8 @@ augroup omnisharp_commands
   autocmd FileType cs nmap <silent> <buffer> <Leader>osfx <Plug>(omnisharp_fix_usings)
   autocmd FileType cs nmap <silent> <buffer> <C-\> <Plug>(omnisharp_signature_help)
   autocmd FileType cs imap <silent> <buffer> <C-\> <Plug>(omnisharp_signature_help)
+  autocmd FileType cs nmap <silent> <buffer> <C-Space> <Plug>(omnisharp_signature_help)
+  autocmd FileType cs imap <silent> <buffer> <C-Space> <Plug>(omnisharp_signature_help)
 
   " Navigate up and down by method/property/field
   autocmd FileType cs nmap <silent> <buffer> [[ <Plug>(omnisharp_navigate_up)
@@ -227,7 +234,7 @@ if exists("syntax_on")
 endif
 "let g:colors_name = "ganterich"
 
-hi! Normal       gui=NONE guifg=#ccccbc guibg=#1a1919
+hi! Normal       gui=NONE guifg=#ccccbc guibg=#0f0e0e
 hi! Statement    gui=NONE guifg=#cab975
 hi! link Type Statement
 hi! link Identifier Constant
@@ -252,7 +259,8 @@ hi! link Error Normal
 hi! VertSplit    gui=NONE guifg=#202020 guibg=#202020
 hi! StatusLine   gui=NONE guifg=#d1c4c4 guibg=#202020
 hi! StatusLineNC gui=NONE guifg=#d0c0c0 guibg=#202020
-hi! Visual        guibg=#222222
+hi! Visual       guibg=#222222
+hi! Pmenu        guibg=#000000
 
 "hi link SpecialKey Ignore
 
@@ -266,9 +274,9 @@ hi! Cursor  guifg=white guibg=#ff5500
 hi! iCursor guifg=white guibg=#0088ff
 
 
-set background=dark
-let g:gruvbox_bold = 0
-let g:gruvbox_contrast_dark="hard"
+"set background=dark
+"let g:gruvbox_bold = 0
+"let g:gruvbox_contrast_dark="hard"
 "colorscheme gruvbox
 
-colorscheme murphy
+"colorscheme murphy
