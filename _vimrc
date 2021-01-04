@@ -120,7 +120,7 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 xnoremap p pgvy
-"tnoremap <Esc> <C-\><C-n>
+tnoremap <Esc> <C-\><C-n>
 
 nmap <leader>+ :NERDTreeToggle<CR>
 nmap <leader>- :NERDTreeFocus<CR>
@@ -148,12 +148,12 @@ let g:ale_completion_enabled = 1
 " }}}
 
 " OmniSharp: {{{
-set omnifunc=ale#completion#OmniFunc
 let g:OmniSharp_popup_options = {
     \ 'highlight': 'Normal',
     \ 'padding': [1],
     \ 'border': [1]
     \}
+set omnifunc=ale#completion#OmniFunc
 augroup omnisharp_commands
   autocmd!
 
@@ -234,10 +234,10 @@ if exists("syntax_on")
 endif
 "let g:colors_name = "ganterich"
 
-hi! Normal       gui=NONE guifg=#ccccbc guibg=#0f0e0e
+hi! Normal       gui=NONE guifg=#ccccbc guibg=#161515
 hi! Statement    gui=NONE guifg=#cab975
 hi! link Type Statement
-hi! link Identifier Constant
+hi! link Identifier Normal
 hi! Constant    gui=NONE guifg=#729a59
 hi! String      gui=NONE guifg=#496f6f
 hi! Comment     gui=NONE guifg=#775555
@@ -278,5 +278,3 @@ hi! iCursor guifg=white guibg=#0088ff
 "let g:gruvbox_bold = 0
 "let g:gruvbox_contrast_dark="hard"
 "colorscheme gruvbox
-
-"colorscheme murphy
