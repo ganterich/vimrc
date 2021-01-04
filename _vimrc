@@ -120,7 +120,7 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 xnoremap p pgvy
-"tnoremap <Esc> <C-\><C-n>
+tnoremap <Esc> <C-\><C-n>
 
 nmap <leader>+ :NERDTreeToggle<CR>
 nmap <leader>- :NERDTreeFocus<CR>
@@ -231,7 +231,7 @@ if exists("syntax_on")
 endif
 "let g:colors_name = "ganterich"
 
-hi! Normal       gui=NONE guifg=#ccccbc guibg=#1a1919
+hi! Normal       gui=NONE guifg=#ccccbc guibg=#161515
 hi! Statement    gui=NONE guifg=#cab975
 hi! link Type Statement
 hi! link Identifier Normal
