@@ -10,6 +10,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'morhetz/gruvbox'
 Plugin 'AlessandroYorba/Alduin'
 Plugin 'ganterich/cpp.vim'
+Plugin 'ganterich/vbnet.vim'
 Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'dense-analysis/ale'
 call vundle#end()
@@ -44,7 +45,7 @@ set mps+=<:>
 
 "colorscheme ganterich
 
-set guifont=Consolas:h14
+set guifont=Liberation\ Mono:h15
 if has("win32")
 	"set guifont=Consolas:h14
 	let &makeprg="cd build && cmake --build ."
@@ -188,6 +189,8 @@ augroup omnisharp_commands
   " Contextual code actions (uses fzf, vim-clap, CtrlP or unite.vim selector when available)
   autocmd FileType cs nmap <silent> <buffer> <Leader>osca <Plug>(omnisharp_code_actions)
   autocmd FileType cs xmap <silent> <buffer> <Leader>osca <Plug>(omnisharp_code_actions)
+  autocmd FileType cs nmap <silent> <buffer> <C-.> <Plug>(omnisharp_code_actions)
+  autocmd FileType cs xmap <silent> <buffer> <C-.> <Plug>(omnisharp_code_actions)
   " Repeat the last code action performed (does not use a selector)
   autocmd FileType cs nmap <silent> <buffer> <Leader>os. <Plug>(omnisharp_code_action_repeat)
   autocmd FileType cs xmap <silent> <buffer> <Leader>os. <Plug>(omnisharp_code_action_repeat)
@@ -234,7 +237,7 @@ if exists("syntax_on")
 endif
 "let g:colors_name = "ganterich"
 
-hi! Normal       gui=NONE guifg=#ccccbc guibg=#161515
+hi! Normal       gui=NONE guifg=#ccccbc guibg=#121111
 hi! Statement    gui=NONE guifg=#cab975
 hi! link Type Statement
 hi! link Identifier Normal
