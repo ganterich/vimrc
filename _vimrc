@@ -17,6 +17,7 @@ call vundle#end()
 filetype plugin indent on
 
 syntax on
+set encoding=utf-8
 set incsearch
 
 set nowrap
