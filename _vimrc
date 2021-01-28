@@ -238,8 +238,9 @@ if exists("syntax_on")
 endif
 "let g:colors_name = "ganterich"
 
-hi! Normal       gui=NONE guifg=#ccccbc guibg=#121111
-hi! Statement    gui=NONE guifg=#cab975
+hi! Normal       gui=NONE guifg=#ccccbc guibg=#0e0e0e
+"hi! Statement    gui=NONE guifg=#cab975
+hi! Statement    gui=NONE guifg=#ffee88
 hi! link Type Statement
 hi! link Identifier Normal
 hi! Constant    gui=NONE guifg=#729a59
@@ -276,6 +277,8 @@ hi! link Search Incsearch
 
 hi! Cursor  guifg=white guibg=#ff5500
 hi! iCursor guifg=white guibg=#0088ff
+
+au FileType cs hi! link Include Type
 
 
 "set background=dark
