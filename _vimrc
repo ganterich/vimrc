@@ -238,7 +238,7 @@ if exists("syntax_on")
 endif
 "let g:colors_name = "ganterich"
 
-hi! Normal       gui=NONE guifg=#ccccbc guibg=#0e0e0e
+hi! Normal       gui=NONE guifg=#b3b3a3 guibg=#0e0e0e
 "hi! Statement    gui=NONE guifg=#cab975
 hi! Statement    gui=NONE guifg=#ffee88
 hi! link Type Statement
