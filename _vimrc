@@ -12,7 +12,7 @@ Plugin 'AlessandroYorba/Alduin'
 Plugin 'ganterich/cpp.vim'
 Plugin 'ganterich/vbnet.vim'
 Plugin 'OmniSharp/omnisharp-vim'
-Plugin 'dense-analysis/ale'
+"Plugin 'dense-analysis/ale'
 call vundle#end()
 filetype plugin indent on
 
@@ -240,7 +240,7 @@ endif
 
 hi! Normal       gui=NONE guifg=#b3b3a3 guibg=#0e0e0e
 "hi! Statement    gui=NONE guifg=#cab975
-hi! Statement    gui=NONE guifg=#ffee88
+hi! Statement    gui=NONE guifg=#fecc66
 hi! link Type Statement
 hi! link Identifier Normal
 hi! Constant    gui=NONE guifg=#729a59
