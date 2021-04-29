@@ -6,13 +6,11 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-"Plugin 'ganterich/vimcolors'
 Plugin 'morhetz/gruvbox'
 Plugin 'AlessandroYorba/Alduin'
 Plugin 'ganterich/cpp.vim'
 Plugin 'ganterich/vbnet.vim'
 Plugin 'OmniSharp/omnisharp-vim'
-"Plugin 'dense-analysis/ale'
 call vundle#end()
 filetype plugin indent on
 
@@ -38,15 +36,16 @@ set nocursorline
 
 set t_md= t_ut= guioptions= belloff=all mouse=a
 
-set guicursor=n-v-c-i:block-Cursor
-set guicursor+=i:iCursor
-set guicursor+=n-v-c-i:blinkon0
+"set guicursor=n-v-c-i:block-Cursor
+"set guicursor+=i:iCursor
+"set guicursor+=n-v-c-i:blinkon0
 
 set mps+=<:>
 
 "colorscheme ganterich
 
-set guifont=Liberation\ Mono:h15
+"set guifont=Liberation\ Mono:h18
+set guifont=Source\ Code\ Pro:h16
 if has("win32")
 	"set guifont=Consolas:h14
 	let &makeprg="cd build && cmake --build ."
@@ -126,6 +125,8 @@ tnoremap <Esc> <C-\><C-n>
 
 nmap <leader>+ :NERDTreeToggle<CR>
 nmap <leader>- :NERDTreeFocus<CR>
+
+noremap * *N
 
 let g:ctrlp_by_filename=1
 let g:ctrlp_working_path_mode=0
@@ -238,13 +239,13 @@ if exists("syntax_on")
 endif
 "let g:colors_name = "ganterich"
 
-hi! Normal       gui=NONE guifg=#b3b3a3 guibg=#0e0e0e
+hi! Normal       gui=NONE guifg=#b3b3a3 guibg=#292929
 "hi! Statement    gui=NONE guifg=#cab975
 hi! Statement    gui=NONE guifg=#fecc66
 hi! link Type Statement
 hi! link Identifier Normal
 hi! Constant    gui=NONE guifg=#729a59
-hi! String      gui=NONE guifg=#496f6f
+hi! String      gui=NONE guifg=#398f7f
 hi! Comment     gui=NONE guifg=#775555
 hi! Special     gui=NONE guifg=#87AFAF
 hi! PreProc     gui=NONE guifg=#a274c5
@@ -253,7 +254,7 @@ hi! link Error Normal
 hi! Directory   gui=NONE guifg=#5F87AF
 hi! Underlined  gui=NONE gui=underline 
 
-hi! Function guifg=#d06749
+hi! Function guifg=#d56f4f
 
 hi! Todo guibg=NONE guifg=#bb4444
 hi! Note guibg=NONE guifg=#bb8888
@@ -285,3 +286,6 @@ au FileType cs hi! link Include Type
 "let g:gruvbox_bold = 0
 "let g:gruvbox_contrast_dark="hard"
 "colorscheme gruvbox
+
+
+let g:OmniSharp_highlighting=0
