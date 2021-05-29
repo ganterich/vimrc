@@ -6,7 +6,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-"Plugin 'ganterich/vimcolors'
 Plugin 'morhetz/gruvbox'
 Plugin 'AlessandroYorba/Alduin'
 Plugin 'ganterich/cpp.vim'
@@ -39,15 +38,16 @@ set nocursorline
 
 set t_md= t_ut= guioptions= belloff=all mouse=a
 
-set guicursor=n-v-c-i:block-Cursor
-set guicursor+=i:iCursor
-set guicursor+=n-v-c-i:blinkon0
+"set guicursor=n-v-c-i:block-Cursor
+"set guicursor+=i:iCursor
+"set guicursor+=n-v-c-i:blinkon0
 
 set mps+=<:>
 
 "colorscheme ganterich
 
-set guifont=Liberation\ Mono:h15
+"set guifont=Liberation\ Mono:h18
+set guifont=Source\ Code\ Pro:h16
 if has("win32")
 	"set guifont=Consolas:h14
 	let &makeprg="cd build && cmake --build ."
@@ -129,6 +129,8 @@ tnoremap <Esc> <C-\><C-n>
 
 nmap <leader>+ :NERDTreeToggle<CR>
 nmap <leader>- :NERDTreeFocus<CR>
+
+noremap * *N
 
 let g:ctrlp_by_filename=1
 let g:ctrlp_working_path_mode=0
@@ -237,68 +239,44 @@ autocmd! BufNewFile, BufRead *.fl set syntax=rust
 
 
 
-
-
-""""""""""""""""""
-""     COLORS
-""""""""""""""""""
-"set background=dark
-"hi clear
-"if exists("syntax_on")
-"    syntax reset
-"endif
-""let g:colors_name = "ganterich"
-"
-"hi! Normal       gui=NONE guifg=#b3b3a3 guibg=#0e0e0e
-""hi! Statement    gui=NONE guifg=#cab975
-"hi! Statement    gui=NONE guifg=#fecc66
-"hi! link Type Statement
-"hi! link Identifier Normal
-"hi! Constant    gui=NONE guifg=#729a59
-"hi! String      gui=NONE guifg=#496f6f
-"hi! Comment     gui=NONE guifg=#775555
-"hi! Special     gui=NONE guifg=#87AFAF
-"hi! PreProc     gui=NONE guifg=#a274c5
-"hi! Title       gui=NONE guifg=#FFFFFF
-"hi! link Error Normal
-"hi! Directory   gui=NONE guifg=#5F87AF
-"hi! Underlined  gui=NONE gui=underline 
-"
-"hi! Function guifg=#d06749
-"
-"hi! Todo guibg=NONE guifg=#bb4444
-"hi! Note guibg=NONE guifg=#bb8888
-"
-"hi! link Error Normal
-"
-""Furniture
-"hi! VertSplit    gui=NONE guifg=#202020 guibg=#202020
-"hi! StatusLine   gui=NONE guifg=#d1c4c4 guibg=#202020
-"hi! StatusLineNC gui=NONE guifg=#d0c0c0 guibg=#202020
-"hi! Visual       guibg=#222222
-"hi! Pmenu        guibg=#000000
-"
-""hi link SpecialKey Ignore
-"
-"" Search
-"hi! IncSearch guifg=#40cc30 guibg=NONE gui=underline,bold
-"hi! link Search Incsearch
-"
-""hi MatchParen  
-"
-"hi! Cursor  guifg=white guibg=#ff5500
-"hi! iCursor guifg=white guibg=#0088ff
-"
-"au FileType cs hi! link Include Type
-
-
-"set background=dark
-"let g:gruvbox_bold = 0
-"let g:gruvbox_contrast_dark="hard"
-"colorscheme gruvbox
-
-
-set termguicolors
+"""""""""""""""""
+"     COLORS
+"""""""""""""""""
 set background=dark
-colo pablo
-set background=dark
+hi clear
+if exists("syntax_on")
+    syntax reset
+endif
+"let g:colors_name = "ganterich"
+
+hi! Normal       gui=NONE guifg=#b3b3a3 guibg=#292929
+"hi! Statement    gui=NONE guifg=#cab975
+hi! Statement    gui=NONE guifg=#fecc66
+hi! link Type Statement
+hi! link Identifier Normal
+hi! Constant    gui=NONE guifg=#729a59
+hi! String      gui=NONE guifg=#398f7f
+hi! Comment     gui=NONE guifg=#775555
+hi! Special     gui=NONE guifg=#87AFAF
+hi! PreProc     gui=NONE guifg=#a274c5
+hi! Title       gui=NONE guifg=#FFFFFF
+hi! link Error Normal
+hi! Directory   gui=NONE guifg=#5F87AF
+hi! Underlined  gui=NONE gui=underline 
+
+hi! Function guifg=#d56f4f
+
+hi! Todo guibg=NONE guifg=#bb4444
+hi! Note guibg=NONE guifg=#bb8888
+
+hi! link Error Normal
+
+"Furniture
+hi! VertSplit    gui=NONE guifg=#202020 guibg=#202020
+hi! StatusLine   gui=NONE guifg=#d1c4c4 guibg=#202020
+hi! StatusLineNC gui=NONE guifg=#d0c0c0 guibg=#202020
+hi! Visual       guibg=#222222
+hi! Pmenu        guibg=#000000
+
+
+let g:OmniSharp_highlighting=0
