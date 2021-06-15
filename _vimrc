@@ -142,6 +142,7 @@ let g:ctrlp_custom_ignore={
     \ }
 let g:ctrlp_show_hidden=1
 let g:ctrlp_switch_buffer=0
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 
 " ALE: {{{
@@ -281,3 +282,5 @@ hi! Pmenu        guibg=#000000
 
 
 let g:OmniSharp_highlighting=1
+
+colo iceberg
