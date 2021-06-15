@@ -7,11 +7,13 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'morhetz/gruvbox'
-Plugin 'AlessandroYorba/Alduin'
-Plugin 'ganterich/cpp.vim'
-Plugin 'ganterich/vbnet.vim'
+"Plugin 'AlessandroYorba/Alduin'
+Plugin 'jhlgns/cpp.vim'
+Plugin 'jhlgns/vbnet.vim'
+Plugin 'jhlgns/naysayer88.vim'
 Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'rhysd/vim-clang-format'
+Plugin 'neovim/nvim-lsp'
 "Plugin 'dense-analysis/ale'
 call vundle#end()
 filetype plugin indent on
@@ -279,4 +281,10 @@ hi! Visual       guibg=#222222
 hi! Pmenu        guibg=#000000
 
 
-let g:OmniSharp_highlighting=0
+let g:OmniSharp_highlighting=1
+
+"let g:gruvbox_bold=0
+"let g:gruvbox_contrast_dark='hard'
+"colo gruvbox
+
+color naysayer88
