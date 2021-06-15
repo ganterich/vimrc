@@ -8,10 +8,11 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'morhetz/gruvbox'
 Plugin 'AlessandroYorba/Alduin'
-Plugin 'ganterich/cpp.vim'
-Plugin 'ganterich/vbnet.vim'
+"Plugin 'ganterich/cpp.vim'
+"Plugin 'ganterich/vbnet.vim'
 Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'rhysd/vim-clang-format'
+Plugin 'cocopon/iceberg.vim'
 "Plugin 'dense-analysis/ale'
 call vundle#end()
 filetype plugin indent on
@@ -47,12 +48,12 @@ set mps+=<:>
 "colorscheme ganterich
 
 "set guifont=Liberation\ Mono:h18
-set guifont=Source\ Code\ Pro:h16
+"set guifont=Source\ Code\ Pro:h16
 if has("win32")
-	"set guifont=Consolas:h14
-	let &makeprg="cd build && cmake --build ."
+    set guifont=Consolas:h14
+    "let &makeprg="cd build && cmake --build ."
 elseif has('linux')
-	let &makeprg="cd build && make -j4"
+	"let &makeprg="cd build && make -j4"
     runtime ftplugin/man.vim
     let g:ft_man_open_mode="vert"
 endif
@@ -279,4 +280,4 @@ hi! Visual       guibg=#222222
 hi! Pmenu        guibg=#000000
 
 
-let g:OmniSharp_highlighting=0
+let g:OmniSharp_highlighting=1
