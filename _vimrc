@@ -12,7 +12,7 @@ Plugin 'cocopon/iceberg.vim'
 "Plugin 'jhlgns/vbnet.vim'
 Plugin 'jhlgns/naysayer88.vim'
 Plugin 'OmniSharp/omnisharp-vim'
-"Plugin 'dense-analysis/ale'
+Plugin 'dense-analysis/ale'
 "Plugin 'rhysd/vim-clang-format'
 call vundle#end()
 filetype plugin indent on
@@ -146,14 +146,14 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 
 
 " ALE: {{{
-let g:ale_sign_error = '•'
-let g:ale_sign_warning = '•'
-let g:ale_sign_info = '·'
-let g:ale_sign_style_error = '·'
-let g:ale_sign_style_warning = '·'
+"let g:ale_sign_error = '•'
+"let g:ale_sign_warning = '•'
+"let g:ale_sign_info = '·'
+"let g:ale_sign_style_error = '·'
+"let g:ale_sign_style_warning = '·'
 
 let g:ale_linters = { 'cs': ['OmniSharp'] }
-let g:ale_completion_enabled = 1
+"let g:ale_completion_enabled = 1
 " }}}
 
 " OmniSharp: {{{
@@ -289,3 +289,4 @@ let g:OmniSharp_highlighting=1
 
 color naysayer88
 "colo iceberg
+colo desert
