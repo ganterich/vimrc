@@ -7,14 +7,12 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'morhetz/gruvbox'
-"Plugin 'AlessandroYorba/Alduin'
-Plugin 'jhlgns/cpp.vim'
-Plugin 'jhlgns/vbnet.vim'
-Plugin 'jhlgns/naysayer88.vim'
+Plugin 'cocopon/iceberg.vim'
+"Plugin 'ganterich/cpp.vim'
+"Plugin 'ganterich/vbnet.vim'
 Plugin 'OmniSharp/omnisharp-vim'
-Plugin 'rhysd/vim-clang-format'
-Plugin 'neovim/nvim-lsp'
 "Plugin 'dense-analysis/ale'
+"Plugin 'rhysd/vim-clang-format'
 call vundle#end()
 filetype plugin indent on
 
@@ -49,12 +47,12 @@ set mps+=<:>
 "colorscheme ganterich
 
 "set guifont=Liberation\ Mono:h18
-set guifont=Source\ Code\ Pro:h16
+"set guifont=Source\ Code\ Pro:h16
 if has("win32")
-	"set guifont=Consolas:h14
-	let &makeprg="cd build && cmake --build ."
+    set guifont=Consolas:h14
+    "let &makeprg="cd build && cmake --build ."
 elseif has('linux')
-	let &makeprg="cd build && make -j4"
+	"let &makeprg="cd build && make -j4"
     runtime ftplugin/man.vim
     let g:ft_man_open_mode="vert"
 endif
@@ -143,6 +141,7 @@ let g:ctrlp_custom_ignore={
     \ }
 let g:ctrlp_show_hidden=1
 let g:ctrlp_switch_buffer=0
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 
 " ALE: {{{
@@ -288,3 +287,4 @@ let g:OmniSharp_highlighting=1
 "colo gruvbox
 
 color naysayer88
+"colo iceberg
