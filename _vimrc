@@ -14,6 +14,7 @@ Plugin 'jhlgns/naysayer88.vim'
 Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'dense-analysis/ale'
 "Plugin 'rhysd/vim-clang-format'
+Plugin 'rafi/awesome-vim-colorschemes'
 call vundle#end()
 filetype plugin indent on
 
@@ -251,10 +252,13 @@ if exists("syntax_on")
 endif
 "let g:colors_name = "ganterich"
 
-hi! Normal       gui=NONE guifg=#b3b3a3 guibg=#292929
+hi! Normal       gui=NONE guifg=#b3b3a3 guibg=#202020
 "hi! Statement    gui=NONE guifg=#cab975
-hi! Statement    gui=NONE guifg=#fecc66
-hi! link Type Statement
+"hi! Statement    gui=NONE guifg=#fecc66
+hi! Statement    gui=NONE guifg=#deac46
+"hi! link Type Statement
+hi! link Type Normal
+"hi! Type        gui=NONE guifg=#337766
 hi! link Identifier Normal
 hi! Constant    gui=NONE guifg=#729a59
 hi! String      gui=NONE guifg=#398f7f
@@ -274,19 +278,32 @@ hi! Note guibg=NONE guifg=#bb8888
 hi! link Error Normal
 
 "Furniture
-hi! VertSplit    gui=NONE guifg=#202020 guibg=#202020
+hi! VertSplit    gui=NONE guifg=#000000 guibg=#202020
 hi! StatusLine   gui=NONE guifg=#d1c4c4 guibg=#202020
 hi! StatusLineNC gui=NONE guifg=#d0c0c0 guibg=#202020
 hi! Visual       guibg=#222222
 hi! Pmenu        guibg=#000000
+
+hi! link csModifier Statement
+hi! link csType Statement
+hi! link csStorage Statement
+hi! link csOpSymbols Normal
 
 
 let g:OmniSharp_highlighting=1
 
 "let g:gruvbox_bold=0
 "let g:gruvbox_contrast_dark='hard'
+"
 "colo gruvbox
-
-color naysayer88
+"color naysayer88
 "colo iceberg
-colo desert
+"colo desert
+"colo happy_hacking
+
+
+
+
+map <F7> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
