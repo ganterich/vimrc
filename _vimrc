@@ -6,15 +6,17 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'morhetz/gruvbox'
-Plugin 'cocopon/iceberg.vim'
+
+"Plugin 'morhetz/gruvbox'
+"Plugin 'jhlgns/naysayer88.vim'
+""Plugin 'cocopon/iceberg.vim'
+
 "Plugin 'jhlgns/cpp.vim'
+"Plugin 'rhysd/vim-clang-format'
 "Plugin 'jhlgns/vbnet.vim'
-Plugin 'jhlgns/naysayer88.vim'
 Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'dense-analysis/ale'
-"Plugin 'rhysd/vim-clang-format'
-Plugin 'rafi/awesome-vim-colorschemes'
+Plugin 'puremourning/vimspector'
 call vundle#end()
 filetype plugin indent on
 
@@ -40,9 +42,9 @@ set nocursorline
 
 set t_md= t_ut= guioptions= belloff=all mouse=a
 
-"set guicursor=n-v-c-i:block-Cursor
-"set guicursor+=i:iCursor
-"set guicursor+=n-v-c-i:blinkon0
+set guicursor=n-v-c-i:block-Cursor
+set guicursor+=i:iCursor
+set guicursor+=n-v-c-i:blinkon0
 
 set mps+=<:>
 
@@ -227,6 +229,9 @@ let g:clang_format#auto_format_on_insert_leave=1
 let g:clang_format#auto_formatexpr=1
 
 
+let g:vimspector_enable_mappings='HUMAN'
+
+
 
 autocmd BufNewFile, BufRead *.bas  set ft=vbnet
 autocmd BufNewFile, BufRead *.fs   set ft=cpp
@@ -257,12 +262,13 @@ hi! Normal       gui=NONE guifg=#b3b3a3 guibg=#202020
 "hi! Statement    gui=NONE guifg=#fecc66
 hi! Statement    gui=NONE guifg=#deac46
 "hi! link Type Statement
-hi! link Type Normal
+"hi! link Type Normal
+hi! Type    gui=NONE guifg=#c9a0c0
 "hi! Type        gui=NONE guifg=#337766
 hi! link Identifier Normal
 hi! Constant    gui=NONE guifg=#729a59
 hi! String      gui=NONE guifg=#398f7f
-hi! Comment     gui=NONE guifg=#775555
+hi! Comment     gui=NONE guifg=#6a4949
 hi! Special     gui=NONE guifg=#87AFAF
 hi! PreProc     gui=NONE guifg=#a274c5
 hi! Title       gui=NONE guifg=#FFFFFF
@@ -279,15 +285,20 @@ hi! link Error Normal
 
 "Furniture
 hi! VertSplit    gui=NONE guifg=#000000 guibg=#202020
-hi! StatusLine   gui=NONE guifg=#d1c4c4 guibg=#202020
-hi! StatusLineNC gui=NONE guifg=#d0c0c0 guibg=#202020
-hi! Visual       guibg=#222222
+hi! StatusLine   gui=NONE guifg=#d1c4c4 guibg=#1b1b1b
+hi! StatusLineNC gui=NONE guifg=#d0c0c0 guibg=#1b1b1b
+hi! Visual       guibg=#393939
 hi! Pmenu        guibg=#000000
 
 hi! link csModifier Statement
 hi! link csType Statement
+hi! link csIsType Statement
 hi! link csStorage Statement
 hi! link csOpSymbols Normal
+hi! EndOfBuffer guifg=#202020 guibg=NONE
+
+hi! Cursor  guifg=white guibg=#aa4411
+hi! iCursor guifg=white guibg=#b3b3a3
 
 
 let g:OmniSharp_highlighting=1
