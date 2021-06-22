@@ -56,6 +56,7 @@ if has("win32")
     set guifont=Consolas:h14
     "let &makeprg="cd build && cmake --build ."
 elseif has('linux')
+    set guifont=Monospace:h18
 	"let &makeprg="cd build && make -j4"
     runtime ftplugin/man.vim
     let g:ft_man_open_mode="vert"
@@ -131,8 +132,8 @@ map <C-l> <C-w>l
 xnoremap p pgvy
 tnoremap <Esc> <C-\><C-n>
 
-nmap <leader>+ :NERDTreeToggle<CR>
-nmap <leader>- :NERDTreeFocus<CR>
+nmap <leader>/ :NERDTreeToggle<CR>
+nmap <leader>? :NERDTreeFocus<CR>
 
 noremap * *N
 
@@ -233,16 +234,17 @@ let g:vimspector_enable_mappings='HUMAN'
 
 
 
-autocmd BufNewFile, BufRead *.bas  set ft=vbnet
-autocmd BufNewFile, BufRead *.fs   set ft=cpp
-autocmd BufNewFile, BufRead *.vs   set ft=cpp
-autocmd BufNewFile, BufRead *.vs   set ft=cpp
-autocmd BufNewFile, BufRead *.frag set ft=cpp
-autocmd BufNewFile, BufRead *.vert set ft=cpp
-autocmd BufNewFile, BufRead *.glsl set ft=cpp
+autocmd BufNewFile,BufRead *.bas  set ft=vbnet
+autocmd BufNewFile,BufRead *.fs   set ft=cpp
+autocmd BufNewFile,BufRead *.vs   set ft=cpp
+autocmd BufNewFile,BufRead *.vs   set ft=cpp
+autocmd BufNewFile,BufRead *.frag set ft=cpp
+autocmd BufNewFile,BufRead *.vert set ft=cpp
+autocmd BufNewFile,BufRead *.glsl set ft=cpp
 autocmd FileType typescript set shiftwidth=2 | set tabstop=2 | set expandtab
 
-autocmd! BufNewFile, BufRead *.fl set syntax=rust
+autocmd! BufNewFile,BufRead *.fl set syntax=rust
+autocmd BufNewFile,BufRead *.razor set ft=html
 
 
 
@@ -300,6 +302,9 @@ hi! EndOfBuffer guifg=#202020 guibg=NONE
 
 hi! Cursor  guifg=white guibg=#aa4411
 hi! iCursor guifg=white guibg=#b3b3a3
+
+hi! link htmlEndTag htmlTag
+hi! link htmlTagN Type
 
 
 let g:OmniSharp_highlighting=1
