@@ -16,7 +16,8 @@ Plugin 'scrooloose/nerdtree'
 "Plugin 'jhlgns/vbnet.vim'
 Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'dense-analysis/ale'
-Plugin 'puremourning/vimspector'
+"Plugin 'puremourning/vimspector'
+"Plugin 'jhlgns/vim-razor'
 call vundle#end()
 filetype plugin indent on
 
@@ -153,8 +154,10 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 "let g:ale_sign_error = '•'
 "let g:ale_sign_warning = '•'
 "let g:ale_sign_info = '·'
-"let g:ale_sign_style_error = '·'
-"let g:ale_sign_style_warning = '·'
+"let g:ale_sign_error = 'E'
+"let g:ale_sign_warning = 'W'
+"let g:ale_sign_column_always=1
+let g:ale_set_signs=0
 
 let g:ale_linters = { 'cs': ['OmniSharp'] }
 "let g:ale_completion_enabled = 1
@@ -283,7 +286,9 @@ hi! Function guifg=#d56f4f
 hi! Todo guibg=NONE guifg=#bb4444
 hi! Note guibg=NONE guifg=#bb8888
 
-hi! link Error Normal
+"hi! link Error Normal
+hi! Error guifg=#ff0000 guibg=#202020
+hi! link ALEError Error
 
 "Furniture
 hi! VertSplit    gui=NONE guifg=#202020 guibg=#000000
