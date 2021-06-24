@@ -291,7 +291,11 @@ hi! Error guifg=#ff0000 guibg=#202020
 hi! link ALEError Error
 
 "Furniture
-hi! VertSplit    gui=NONE guifg=#202020 guibg=#000000
+if (has('linux'))
+    hi! VertSplit    gui=NONE guifg=#202020 guibg=#000000
+else
+    hi! VertSplit    gui=NONE guifg=#000000 guibg=#202020
+endif
 hi! StatusLine   gui=NONE guifg=#d1c4c4 guibg=#1b1b1b
 hi! StatusLineNC gui=NONE guifg=#d0c0c0 guibg=#1b1b1b
 hi! Visual       guibg=#393939
