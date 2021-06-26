@@ -287,7 +287,7 @@ hi! Todo guibg=NONE guifg=#bb4444
 hi! Note guibg=NONE guifg=#bb8888
 
 "hi! link Error Normal
-hi! Error guifg=#ff0000 guibg=#202020
+hi! Error guifg=#ff0000 guibg=NONE
 hi! link ALEError Error
 
 "Furniture
