@@ -18,7 +18,7 @@ Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'dense-analysis/ale'
 "Plugin 'puremourning/vimspector'
 "Plugin 'jhlgns/vim-razor'
-Plugin 'neovim/nvim-lspconfig'
+"Plugin 'neovim/nvim-lspconfig'
 call vundle#end()
 filetype plugin indent on
 
