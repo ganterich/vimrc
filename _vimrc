@@ -18,12 +18,11 @@ Plugin 'OmniSharp/omnisharp-vim'
 Plugin 'dense-analysis/ale'
 "Plugin 'puremourning/vimspector'
 "Plugin 'jhlgns/vim-razor'
+Plugin 'neovim/nvim-lspconfig'
 call vundle#end()
 filetype plugin indent on
 
-syntax on
-set encoding=utf-8
-set incsearch
+syntax on set encoding=utf-8 set incsearch
 
 set nowrap
 set tabstop=4 shiftwidth=4 expandtab smarttab
@@ -213,6 +212,7 @@ augroup omnisharp_commands
   autocmd FileType cs nmap <silent> <buffer> <Leader>os= <Plug>(omnisharp_code_format)
 
   autocmd FileType cs nmap <silent> <buffer> <Leader>osnm <Plug>(omnisharp_rename)
+  autocmd FileType cs nmap <silent> <buffer> <F2> <Plug>(omnisharp_rename)
 
   autocmd FileType cs nmap <silent> <buffer> <Leader>osre <Plug>(omnisharp_restart_server)
   autocmd FileType cs nmap <silent> <buffer> <Leader>osst <Plug>(omnisharp_start_server)
