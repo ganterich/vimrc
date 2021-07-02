@@ -246,6 +246,7 @@ autocmd BufNewFile,BufRead *.vert set ft=cpp
 autocmd BufNewFile,BufRead *.glsl set ft=cpp
 autocmd FileType typescript set shiftwidth=2 | set tabstop=2 | set expandtab
 autocmd FileType yaml set shiftwidth=2 | set tabstop=2 | set expandtab
+autocmd BufNewFile,BufRead Dockerfile.* set ft=dockerfile
 
 autocmd! BufNewFile,BufRead *.fl set syntax=rust
 autocmd BufNewFile,BufRead *.razor set ft=html
