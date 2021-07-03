@@ -22,7 +22,9 @@ Plugin 'dense-analysis/ale'
 call vundle#end()
 filetype plugin indent on
 
-syntax on set encoding=utf-8 set incsearch
+syntax on
+set encoding=utf-8
+set incsearch
 
 set nowrap
 set tabstop=4 shiftwidth=4 expandtab smarttab
@@ -264,7 +266,7 @@ if exists("syntax_on")
 endif
 "let g:colors_name = "ganterich"
 
-hi! Normal       gui=NONE guifg=#b3b3a3 guibg=#202020
+hi! Normal       gui=NONE guifg=#b3b3a3 guibg=#000000
 "hi! Statement    gui=NONE guifg=#cab975
 "hi! Statement    gui=NONE guifg=#fecc66
 hi! Statement    gui=NONE guifg=#deac46
@@ -294,14 +296,14 @@ hi! link ALEError Error
 
 "Furniture
 if (has('linux'))
-    hi! VertSplit    gui=NONE guifg=#202020 guibg=#000000
+    hi! VertSplit    gui=NONE guifg=#000000 guibg=#000000
 else
-    hi! VertSplit    gui=NONE guifg=#000000 guibg=#202020
+    hi! VertSplit    gui=NONE guifg=#000000 guibg=#000000
 endif
 hi! StatusLine   gui=NONE guifg=#d1c4c4 guibg=#1b1b1b
 hi! StatusLineNC gui=NONE guifg=#d0c0c0 guibg=#1b1b1b
 hi! Visual       guibg=#393939
-hi! Search       guibg=#ffffff guifg=#202020
+hi! Search       guibg=#ffffff guifg=#000000
 hi! Pmenu        guibg=#000000
 
 hi! link csModifier Statement
@@ -309,7 +311,7 @@ hi! link csType Statement
 hi! link csIsType Statement
 hi! link csStorage Statement
 hi! link csOpSymbols Normal
-hi! EndOfBuffer guifg=#202020 guibg=NONE
+hi! EndOfBuffer guifg=#000000 guibg=NONE
 
 hi! Cursor  guifg=white guibg=#aa4411
 hi! iCursor guifg=white guibg=#b3b3a3
