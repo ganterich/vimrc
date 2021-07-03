@@ -148,7 +148,7 @@ let g:ctrlp_custom_ignore={
     \ }
 let g:ctrlp_show_hidden=1
 let g:ctrlp_switch_buffer=0
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+"let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 
 " ALE: {{{
@@ -248,6 +248,7 @@ autocmd BufNewFile,BufRead *.vert set ft=cpp
 autocmd BufNewFile,BufRead *.glsl set ft=cpp
 autocmd FileType typescript set shiftwidth=2 | set tabstop=2 | set expandtab
 autocmd FileType yaml set shiftwidth=2 | set tabstop=2 | set expandtab
+autocmd BufNewFile,BufRead Dockerfile.* set ft=dockerfile
 
 autocmd! BufNewFile,BufRead *.fl set syntax=rust
 autocmd BufNewFile,BufRead *.razor set ft=html
