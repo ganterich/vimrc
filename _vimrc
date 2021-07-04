@@ -319,6 +319,11 @@ hi! iCursor guifg=white guibg=#b3b3a3
 hi! link htmlEndTag htmlTag
 hi! link htmlTagN Type
 
+hi! DiffAdd    gui=bold guifg=#b3b3a3 guibg=#226622
+hi! DiffDelete gui=bold guifg=#b3b3a3 guibg=#662222
+hi! DiffChange gui=bold guifg=#b3b3a3 guibg=#666622
+hi! DiffText   gui=bold guifg=#b3b3a3 guibg=#226666
+
 
 let g:OmniSharp_highlighting=1
 
