@@ -296,9 +296,9 @@ hi! link ALEError Error
 
 "Furniture
 if (has('linux'))
-    hi! VertSplit    gui=NONE guifg=#000000 guibg=#000000
+    hi! VertSplit    gui=NONE guifg=#000000 guibg=#b3b3a3
 else
-    hi! VertSplit    gui=NONE guifg=#000000 guibg=#000000
+    hi! VertSplit    gui=NONE guifg=#b3b3a3 guibg=#000000
 endif
 hi! StatusLine   gui=NONE guifg=#d1c4c4 guibg=#1b1b1b
 hi! StatusLineNC gui=NONE guifg=#d0c0c0 guibg=#1b1b1b
