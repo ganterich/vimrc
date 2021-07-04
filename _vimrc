@@ -311,6 +311,7 @@ hi! link csType Statement
 hi! link csIsType Statement
 hi! link csStorage Statement
 hi! link csOpSymbols Normal
+hi! link csLogicSymbols Normal
 hi! EndOfBuffer guifg=#000000 guibg=NONE
 
 hi! Cursor  guifg=white guibg=#aa4411
